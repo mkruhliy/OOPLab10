@@ -5,20 +5,20 @@ import lombok.AllArgsConstructor;
 import java.time.LocalDate;
 
 @AllArgsConstructor
-public class TwitterClient implements Client{
-    public TwitterUser twitterUser;
+public class FacebookClient implements Client{
+    public FacebookUser facebookUser;
     @Override
     public String getEmail() {
-        return twitterUser.getUserMail();
+        return facebookUser.getEmail();
     }
 
     @Override
     public String getCountry() {
-        return twitterUser.getCountry();
+        return facebookUser.getUserCountry().toString();
     }
 
     @Override
     public LocalDate getLastActiveTime() {
-        return LocalDate.parse(twitterUser.getLastActiveTime());
+        return facebookUser.getGetUserActiveTime();
     }
 }
